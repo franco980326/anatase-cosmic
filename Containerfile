@@ -1,15 +1,21 @@
 FROM i.anatase.org/anatase:stable
 
-# Do your thing...
-# Install btop
-# RUN dnf -y install btop
-
-# Install coolercontrol
-# RUN . /etc/os-release && \
-#     dnf -y copr enable codifryed/CoolerControl && \
-#     dnf -y install coolercontrol && \
-#     systemctl enable coolercontrold
+RUN dnf copr enable -y ryanabx/cosmic-epoch && \
+    dnf install -y \
+        cosmic-desktop \
+        cosmic-session \
+        cosmic-files \
+        cosmic-term \
+        cosmic-store \
+        cosmic-settings \
+        # Additional apps that fit well
+        alacritty \
+        neovim \
+        btop \
+        fastfetch \
+        fuzzel
 
 # Cleanup (leave this here)
 RUN rm -rf /var && \
     mkdir -p /var/tmp
+#Usando receta oficial
