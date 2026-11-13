@@ -18,4 +18,4 @@ RUN dnf copr enable -y ryanabx/cosmic-epoch && \
 # Cleanup (leave this here)
 RUN rm -rf /var && \
     mkdir -p /var/tmp
-#Usando receta oficial
+#Usando receta oficia
